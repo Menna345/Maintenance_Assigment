@@ -5,8 +5,9 @@ import Messages.TaskAddedEmailMessage;
 import Users.Professor;
 import Users.Student;
 import Users.TA;
+import Users.Users;
 
-public class Course {
+public class Course  {
 	
 	String name;
 	String code;
@@ -14,14 +15,10 @@ public class Course {
 	ArrayList<String> exams;
 	ArrayList<String> grades;
 	
-	ArrayList<Professor> professorsForEmailNotification;
-	ArrayList<Professor> professorsForSMSNotification;
+	ArrayList<Users> usersForEmailNotification;
+	ArrayList<Users	> usersForSMSNotification;
 	
-	ArrayList<TA> TAsForEmailNotification;
-	ArrayList<TA> TAsForSMSNotification;
 	
-	ArrayList<Student> studentsForEmailNotification;
-	ArrayList<Student> studentsForSMSNotification;
 	
 	public Course(String name, String code) {
 		super();
@@ -32,14 +29,10 @@ public class Course {
 		exams = new ArrayList<String>();
 		grades = new ArrayList<String>();
 		
-		professorsForEmailNotification = new ArrayList<Professor>();
-		professorsForSMSNotification = new ArrayList<Professor>();
+		usersForEmailNotification = new ArrayList<Users>();
+		usersForSMSNotification = new ArrayList<Users>();
 		
-		TAsForEmailNotification = new ArrayList<TA>();
-		TAsForSMSNotification = new ArrayList<TA>();
 		
-		studentsForEmailNotification = new ArrayList<Student>();
-		studentsForSMSNotification = new ArrayList<Student>();
 	}
 
 	public String getName() {
@@ -58,30 +51,13 @@ public class Course {
 		this.code = code;
 	}
 	
-	public void subscribeProfessorForEmailNotification(Professor professor) {
-		professorsForEmailNotification.add(professor);
+	public void subscribeUserForEmailNotification(Users user) {
+		usersForEmailNotification.add(user);
 	}
 	
-	public void subscribeProfessorForSMSNotification(Professor professor) {
-		professorsForSMSNotification.add(professor);
+	public void subscribeUserForSMSNotification(Users user) {
+		usersForSMSNotification.add(user);
 	}
-	
-	public void subscribeTAForEmailNotification(TA ta) {
-		TAsForEmailNotification.add(ta);
-	}
-	
-	public void subscribeTAForSMSNotification(TA ta) {
-		TAsForSMSNotification.add(ta);
-	}
-	
-	public void subscribeStudentForEmailNotification(Student student) {
-		studentsForEmailNotification.add(student);
-	}
-	
-	public void subscribeStudentForSMSNotification(Student student) {
-		studentsForSMSNotification.add(student);
-	}
-	
 	
 	
 	public void AddAssignment(String assignName, String assignBody) {
@@ -97,6 +73,7 @@ public class Course {
 	private void notifyAllUsers(String[] placeholders) {
 		// notify users by email
 		TaskAddedEmailMessage msg = new TaskAddedEmailMessage();
+		
 		String notification = msg.prepareMessage(placeholders);
 		
 		// open connection for Email gateway and do some configurations to the object
@@ -104,20 +81,13 @@ public class Course {
 		EmailGateway emailGateway = new EmailGateway();
 		
 		
-		for (Professor professor : professorsForEmailNotification) {
-			professor.notifyProfessor(notification);
-			emailGateway.sendMessage(notification, professor.getEmail());
+		
+		for (Users user : usersForEmailNotification) {
+			user.update(notification);
+			emailGateway.sendMessage(notification,user.getEmail());
 		}
 		
-		for (TA ta : TAsForEmailNotification) {
-			ta.notifyTA(notification);
-			emailGateway.sendMessage(notification, ta.getEmail());
-		}
 		
-		for (Student student : studentsForSMSNotification) {
-			student.notifyStudent(notification);
-			emailGateway.sendMessage(notification, student.getEmail());
-		}
 	}
 	
 	
