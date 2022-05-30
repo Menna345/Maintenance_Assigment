@@ -1,6 +1,6 @@
 package Users;
 
-public class Student {
+public class Student implements Users {
 	String name;
 	int Id;
 	String email;
@@ -53,8 +53,8 @@ public class Student {
 	}
 	
 	
-	public void notifyStudent(String message) {
-		// do some stuff
+	
+	public void update(String message) {
 	}
 	
 }
