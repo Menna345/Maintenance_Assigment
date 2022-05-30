@@ -5,7 +5,7 @@ import Messages.GradesAnnouncementMobileMessage;
 import Messages.TaskAddedMobileMessage;
 
 public class SMSGateway extends Gateways {
-	
+	@Override
 	public void sendMessage(Object message, String user) {
 		String[] placeHolders = new String[] {}; // set some place holders here 
 		
