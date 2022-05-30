@@ -2,13 +2,12 @@ package Users;
 
 import java.sql.Date;
 
-public class Professor implements Users{
-	String name;
+public class Professor extends Users{
+	
 	String department;
 	Date hirringDate;
 	String PhDTopic;
-	String email;
-	String phoneNumber;
+	
 	
 	
 	public Professor(String name, String department, Date hirringDate, String phDTopic, String email,
@@ -23,32 +22,7 @@ public class Professor implements Users{
 	}
 	
 	
-	public String getEmail() {
-		return email;
-	}
-
-
-	public void setEmail(String email) {
-		this.email = email;
-	}
-
-
-	public String getPhoneNumber() {
-		return phoneNumber;
-	}
-
-
-	public void setPhoneNumber(String phoneNumber) {
-		this.phoneNumber = phoneNumber;
-	}
-
-
-	public String getName() {
-		return name;
-	}
-	public void setName(String name) {
-		this.name = name;
-	}
+	
 	public String getDepartment() {
 		return department;
 	}
@@ -69,7 +43,7 @@ public class Professor implements Users{
 	}
 	
 	
-	
+	@Override
 	public void update(String message) {
 	}
 	
