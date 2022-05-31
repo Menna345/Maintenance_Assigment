@@ -1,6 +1,7 @@
+
 package Messages;
 
-public class GradesAnnouncementEmailMessage  {
+public class GradesAnnouncementEmailMessage  implements EmailMessages {
 
 	public String prepareMessage(String placeHolders[]) {
 		// code to replace place holders of this type
@@ -13,3 +14,4 @@ public class GradesAnnouncementEmailMessage  {
 		return true;
 	}
 }
+
