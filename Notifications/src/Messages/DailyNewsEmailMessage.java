@@ -1,3 +1,4 @@
+
 package Messages;
 
 public class DailyNewsEmailMessage implements EmailMessages  {
@@ -7,3 +8,4 @@ public class DailyNewsEmailMessage implements EmailMessages  {
 		return "";
 	}
 }
+

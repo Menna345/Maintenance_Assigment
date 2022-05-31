@@ -1,3 +1,4 @@
+
 import java.util.ArrayList;
 
 import Gateways.EmailGateway;
@@ -94,3 +95,4 @@ public class Course  {
 	
 	
 }
+

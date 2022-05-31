@@ -1,3 +1,4 @@
+
 package Messages;
 
 public class TaskAddedEmailMessage  implements EmailMessages{
@@ -13,3 +14,4 @@ public class TaskAddedEmailMessage  implements EmailMessages{
 		
 	}
 }
+
