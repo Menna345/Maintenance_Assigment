@@ -1,4 +1,3 @@
-
 package Gateways;
 
 import Messages.DailyNewsEmailMessage;
@@ -36,4 +35,3 @@ public class EmailGateway extends Gateways  {
 		
 	}
 }
-

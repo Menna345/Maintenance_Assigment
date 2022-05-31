@@ -1,4 +1,3 @@
-
 package Gateways;
 
 import Messages.DailyNewsMobileMessage;
@@ -36,4 +35,3 @@ public class SMSGateway extends Gateways {
 		
 	}
 }
-

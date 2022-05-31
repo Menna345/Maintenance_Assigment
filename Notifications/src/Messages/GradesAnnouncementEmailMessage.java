@@ -1,9 +1,8 @@
-
 package Messages;
 
 public class GradesAnnouncementEmailMessage  implements EmailMessages {
-
-	public String prepareMessage(String placeHolders[]) {
+@Override
+	public String prepareMessage(String[] placeHolders) {
 		// code to replace place holders of this type
 		return "";
 	}
@@ -14,4 +13,3 @@ public class GradesAnnouncementEmailMessage  implements EmailMessages {
 		return true;
 	}
 }
-

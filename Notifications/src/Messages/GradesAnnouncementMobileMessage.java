@@ -1,8 +1,8 @@
 package Messages;
 
-public class GradesAnnouncementMobileMessage {
-
-	public String prepareMessage(String placeHolders[]) {
+public class GradesAnnouncementMobileMessage implements SMSMessages{
+@Override
+	public String prepareMessage(String[] placeHolders) {
 		// code to replace place holders of this type
 		return "";
 	}

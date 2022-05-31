@@ -1,6 +1,6 @@
 package Messages;
 
-public interface EmailMessages {
+public interface SMSMessages {
 	public String prepareMessage(String[] placeHolders);
 
 }
